@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "wallet-campaigns-307112",
+  "private_key_id": "504acab2bb2a79c285302c5d3b05275b1f85f63d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDgIgTPkg1ZGik/\necxXMXf8f13iadB4+LQSU1ah6O81zkc5XLNPB6WZvOXtYRFTBMTIPfYr46qWYmkI\n/fWrkIDzdd0E6/7YOIyYxg+HMYW++odLl5yy4K7EPeGH98q6gI+Qfigna8/jPLYX\nT7ArIdYkvYPHuzsqyjbHsemtN6sdl7FxK9o2Xi4y/YZxO6saZG2GgiulY5Yf2oNE\nfB2/T9BZXKlVZE8aOOriLN+xaMgemi9u/fx0n+sC4NT+vq8GY1xPIbDWnCRw8Pfj\nROh/Nk19Z6Vs7waqi62Z5vhd/kmqTlWCCiQ3XqPozGlxeOH5g7sulPJ/3BzCPrI1\n+7GqFREvAgMBAAECggEABRWVzlpIezugsT6YvWbzNdhzJMO0ZZ90APEVsgPlXpnD\nUTB30NR3k+Pjw11vAIHHL6kC1elgNpvHjjCp9gOyfn4EpCvw/VlVtybRtgYQO/jV\nljK7l0M0M7duT6CgtK0IlK/dRqencPGGSpkVgfpOhUmB8nHzhvuh/9MFXgHj8Skz\njdS4AAZIVpYfRWeNlVd5cTKDLfGSoZxtPPfXh9/txrw/8+3ZkXSdAjak3Mrv5ypB\ne55eAhvTjUrDXKj2OkSVzDYbTsXnNvPhkqylZJWQ5b8Rmkz1ntcI84YkVitEv0xb\nbp60Z6dt2dAyv3KfhhsrkqxAnmH6Gyr0KGKoa8jrAQKBgQD6MUqZL9+Aq32x2ZDc\nyB8hC4UCuPLxmzKMjo6hqJK5SYTFhhwldxCb5NF8TARKKWkprIktDCeJBGI0KR/X\n/lVpiNwqpodhWX4Q0oQ8i+PEmAzwVm/dU3YpJMQIycBEe8/XKtTAyk1eq4Qoin6o\nLAITswe+5Df3v/IwgQLbsiFeoQKBgQDlVd/KbPYBaXUtweLFrBchM1zWMLru0YDm\noNkxv5XGPo/K+4NeyzDWp1Fx9SeHd+tX3Kf1qzJMrby8fEBwE0eQ1EseB3av40Gt\nr3sXpiCv0O0ShwRXS0MDcWO0v7Q4K1G2FEH0Wrp0F7waZBnbius1g9jcXeRY7iQ2\nviFV5G9tzwKBgAQbkxH4yz6dki69V7eIQZqVSdXFm5eD6MyN+qGE1wPbxSZJEWU8\nEzW8CAR2awucqnFYt9fZfzysqcAZfMBbGKPm71Zz7X0Xrw4vpqQn19F+fZfkk2ma\n2THLvLw4M8PsFHl/5oZTy/ll74GK5JF2R4JzSglETfbvW9aYB6f7wLiBAoGBAI+B\n5yJSgLZteWgCtZcgkvCxpVxa7f7XlqO6726UBnMhXvWT4acF2y/XT73RvMSmo9w9\nNdUjJbyZ00rXLbN0PQpB7ieCYCC8QrMe5hXsXPPn9xHq7yp47BxRbiUC+RFU+jLI\nBmWUCKzw1UJmdU/OZFT+hkuPbX7AtmSTIWUQJzI9AoGAVYMllEoMBqR1/OZ8M09s\n15fKuMdTlzEjyefFVTHW0D2t0+SyblG1QRtOMFG+MnUGjqvgbDtBoFQHnuo99aPM\n6xtnBshZj/megKC+vV6DHJEm1l1aKIxyG2YjpcgCLL+pB7qjOe8Yr+2hLfGz+1GT\n3jNJYFZ1U9klU/b0twfKM6s=\n-----END PRIVATE KEY-----\n",
+  "client_email": "chatbot@wallet-campaigns-307112.iam.gserviceaccount.com",
+  "client_id": "102669465353475431122",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/chatbot%40wallet-campaigns-307112.iam.gserviceaccount.com"
+}
