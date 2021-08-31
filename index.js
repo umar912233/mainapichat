@@ -59,7 +59,7 @@ app.post('/webhook', (req, res) => {
   
   if(tag == 'aichat_contact'){
   
-    var url = 'http://mybusiness.chat/api.php?location='+session_name;
+    var url = 'https://mybusiness.chat/api.php?location='+session_name;
 
     axios.get(url)
   .then(response => {
