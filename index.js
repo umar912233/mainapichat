@@ -64,24 +64,25 @@ app.post('/webhook', (req, res) => {
     axios.get(url)
   .then(response => {
     console.log('this is response '+ response);
+    jsonResponse = {
+        fulfillment_response: {
+          messages: [
+            {
+              text: {
+                //fulfillment text response to be sent to the agent
+                text: [" - Hi! This is contact webhook response"]
+              }
+            }
+          ]
+        }
+      };
+      
   })
   .catch(error => {
     console.log('this is error '+ error);
   });
 
-  jsonResponse = {
-      fulfillment_response: {
-        messages: [
-          {
-            text: {
-              //fulfillment text response to be sent to the agent
-              text: [" - Hi! This is contact webhook response"]
-            }
-          }
-        ]
-      }
-    };
-    
+  
     
   }else if(tag == 'aichat_booking'){
 
