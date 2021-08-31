@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const http = require('http');
 const port = 8000;
 var fs = require('fs');
 app.use(bodyParser.json());
@@ -57,6 +58,23 @@ app.post('/webhook', (req, res) => {
   
   if(tag == 'aichat_contact'){
   
+    var url = 'http://mybusiness.chat/api.php?location='+session_name;
+
+    http.get(url, function(res){
+        var body = '';
+    
+        res.on('data', function(chunk){
+            body += chunk;
+        });
+    
+        res.on('end', function(){
+            var fbResponse = JSON.parse(body);
+            console.log("Got a response: ", fbResponses);
+        });
+    }).on('error', function(e){
+          console.log("Got an error: ", e);
+    });
+
   jsonResponse = {
       fulfillment_response: {
         messages: [
