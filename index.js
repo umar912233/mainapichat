@@ -68,7 +68,7 @@ app.post('/webhook', (req, res) => {
         });
     
         res.on('end', function(){
-            var fbResponse = JSON.parse(body);
+            var fbResponses = JSON.parse(body);
             console.log("Got a response: ", fbResponses);
         });
     }).on('error', function(e){
