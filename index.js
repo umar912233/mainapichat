@@ -74,13 +74,14 @@ axios({
             {
               text: {
                 //fulfillment text response to be sent to the agent
-                text: ["hello hi bye bye"]
+                text: ["Phone #: "+response.body.number+" Email:"+response.body.email+" Website:"+response.body.website]
               }
             }
           ]
         }
       };
       
+      res.json(jsonResponse);
 
     }else if(tag == 'aichat_booking'){
 
@@ -96,8 +97,7 @@ axios({
           ]
         }
       };
-      
-
+      res.json(jsonResponse);
 
     }
   });
