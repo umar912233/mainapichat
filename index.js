@@ -73,8 +73,8 @@ app.post('/webhook', (req, res) => {
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
 
-    const tag = req.body.tag;
-    const session_name = req.body.session;
+  const tag = req.body.fulfillmentInfo.tag;
+  const session_name = req.body.sessionInfo.session;
     console.log('this is session:'+session_name);
 
 axios({
