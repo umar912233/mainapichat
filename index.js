@@ -74,7 +74,7 @@ axios({
             {
               text: {
                 //fulfillment text response to be sent to the agent
-                text: ["Phone #: "+response.body.number+" Email:"+response.body.email+" Website:"+response.body.website]
+                text: ["hello hi bye bye"]
               }
             }
           ]
