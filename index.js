@@ -65,6 +65,7 @@ axios({
 
 })
   .then(function (response) {
+    console.log(response.body);
     if(tag == 'aichat_contact'){
 
       jsonResponse = {
@@ -73,7 +74,7 @@ axios({
             {
               text: {
                 //fulfillment text response to be sent to the agent
-                text: ["Phone #: "+response.body.number+"<br> Email:"+response.body.number+"<br> Website:"+response.body.number]
+                text: ["Phone #: "+response.body.number+" Email:"+response.body.email+" Website:"+response.body.website]
               }
             }
           ]
