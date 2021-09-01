@@ -56,22 +56,14 @@ app.post('/webhook', (req, res) => {
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
 
-  https.get('http://mybusiness.chat/api.php?location=projects/wallet-campaigns-307112/locations/us-central1/agents/9e7f3111-ee1c-40fb-a144-47458e297c13/sessions/16', (resp) => {
-  let data = '';
+axios({
+  method: 'get',
+  url: 'http://mybusiness.chat/api.php?location=projects/wallet-campaigns-307112/locations/us-central1/agents/9e7f3111-ee1c-40fb-a144-47458e297c13/sessions/16',
 
-  // A chunk of data has been received.
-  resp.on('data', (chunk) => {
-    data += chunk;
+})
+  .then(function (response) {
+    console.log(response);
   });
-
-  // The whole response has been received. Print out the result.
-  resp.on('end', () => {
-    console.log(JSON.parse(data));
-  });
-
-}).on("error", (err) => {
-  console.log("Error: " + err.message);
-});
 
   
 //   const tag = req.body.fulfillmentInfo.tag;
@@ -145,6 +137,7 @@ app.post('/webhook', (req, res) => {
 //   }
  
 });
+
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}!`);
