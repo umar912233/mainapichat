@@ -59,14 +59,13 @@ app.post('/webhook', (req, res) => {
     const tag = req.body.fulfillmentInfo.tag;
     const session_name = req.body.sessionInfo.session;
 
-    console.log(tag);
-
 axios({
   method: 'get',
   url: 'http://api.mybusiness.chat/api.php?location='+session_name,
 
-}).then(function (response) {
-    console.log(response.body);
+})
+  .then(function (response) {
+    console.log(response.data);
     if(tag == 'aichat_contact'){
 
       jsonResponse = {
@@ -75,7 +74,7 @@ axios({
             {
               text: {
                 //fulfillment text response to be sent to the agent
-                text: ["Phone #: "+response.body.number+" Email:"+response.body.email+" Website:"+response.body.website]
+                text: ["Phone #: "+response.data.number+" Email:"+response.data.email+" Website:"+response.data.website]
               }
             }
           ]
