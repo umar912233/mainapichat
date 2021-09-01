@@ -56,86 +56,51 @@ app.post('/webhook', (req, res) => {
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
 
+    const tag = req.body.fulfillmentInfo.tag;
+    const session_name = req.body.sessionInfo.session;
+
 axios({
   method: 'get',
-  url: 'http://api.mybusiness.chat/api.php?location=projects/wallet-campaigns-307112/locations/us-central1/agents/9e7f3111-ee1c-40fb-a144-47458e297c13/sessions/16',
+  url: 'http://api.mybusiness.chat/api.php?location='+session_name,
 
 })
   .then(function (response) {
-    console.log(response);
+    if(tag == 'aichat_contact'){
+
+      jsonResponse = {
+        fulfillment_response: {
+          messages: [
+            {
+              text: {
+                //fulfillment text response to be sent to the agent
+                text: ["Phone #: "+response.body.number+"<br> Email:"+response.body.number+"<br> Website:"+response.body.number]
+              }
+            }
+          ]
+        }
+      };
+      
+
+    }else if(tag == 'aichat_booking'){
+
+      jsonResponse = {
+        fulfillment_response: {
+          messages: [
+            {
+              text: {
+                //fulfillment text response to be sent to the agent
+                text: [" - Hi! This is booking webhook response"]
+              }
+            }
+          ]
+        }
+      };
+      
+
+
+    }
   });
 
-  
-//   const tag = req.body.fulfillmentInfo.tag;
-//   const session_name = req.body.sessionInfo.session;
-
-// var url = 'https://mybusiness.chat/api.php?location=projects/wallet-campaigns-307112/locations/us-central1/agents/9e7f3111-ee1c-40fb-a144-47458e297c13/sessions/16';
-// axios.get(url)
-// .then(response => {
-// console.log('this is response '+ response);
-// jsonResponse = response;
-
-// res.json(jsonResponse);
-// // jsonResponse = {
-// //     fulfillment_response: {
-// //       messages: [
-// //         {
-// //           text: {
-// //             //fulfillment text response to be sent to the agent
-// //             text: [" - Hi! This is contact webhook response"]
-// //           }
-// //         }
-// //       ]
-// //     }
-// //   };
-  
-// })
-  
-//   if(tag == 'aichat_contact'){
-  
-//     var url = 'https://mybusiness.chat/api.php?location=projects/wallet-campaigns-307112/locations/us-central1/agents/9e7f3111-ee1c-40fb-a144-47458e297c13/sessions/16';
-
-//     axios.get(url)
-//   .then(response => {
-//     console.log('this is response '+ response);
-//     jsonResponse = response;
-//     // jsonResponse = {
-//     //     fulfillment_response: {
-//     //       messages: [
-//     //         {
-//     //           text: {
-//     //             //fulfillment text response to be sent to the agent
-//     //             text: [" - Hi! This is contact webhook response"]
-//     //           }
-//     //         }
-//     //       ]
-//     //     }
-//     //   };
-      
-//   })
-//   .catch(error => {
-//     console.log('this is error '+ error);
-//   });
-
-  
-    
-//   }else if(tag == 'aichat_booking'){
-
-//     jsonResponse = {
-//       fulfillment_response: {
-//         messages: [
-//           {
-//             text: {
-//               //fulfillment text response to be sent to the agent
-//               text: [" - Hi! This is booking webhook response"]
-//             }
-//           }
-//         ]
-//       }
-//     };
-
-//   }
- 
 });
 
 
