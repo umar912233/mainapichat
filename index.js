@@ -7,6 +7,22 @@ const https = require('https');
 var mysq = require('mysql');
 const port = 8080;
 var fs = require('fs');
+
+const corsOpts = {
+  origin: '*',
+
+  methods: [
+    'GET',
+    'POST',
+  ],
+
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
+
+
+app.use(cors(corsOpts));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 const dialogFLowHelper = require('./dialogflow.helper');
@@ -56,8 +72,8 @@ app.post('/webhook', (req, res) => {
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
 
-    const tag = req.body.fulfillmentInfo.tag;
-    const session_name = req.body.sessionInfo.session;
+    const tag = req.body.tag;
+    const session_name = req.body.session;
 
 axios({
   method: 'get',
