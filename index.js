@@ -59,12 +59,13 @@ app.post('/webhook', (req, res) => {
     const tag = req.body.fulfillmentInfo.tag;
     const session_name = req.body.sessionInfo.session;
 
+    console.log(tag);
+
 axios({
   method: 'get',
   url: 'http://api.mybusiness.chat/api.php?location='+session_name,
 
-})
-  .then(function (response) {
+}).then(function (response) {
     console.log(response.body);
     if(tag == 'aichat_contact'){
 
