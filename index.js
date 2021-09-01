@@ -58,7 +58,7 @@ app.post('/webhook', (req, res) => {
 
 axios({
   method: 'get',
-  url: 'http://mybusiness.chat/api.php?location=projects/wallet-campaigns-307112/locations/us-central1/agents/9e7f3111-ee1c-40fb-a144-47458e297c13/sessions/16',
+  url: 'http://api.mybusiness.chat/api.php?location=projects/wallet-campaigns-307112/locations/us-central1/agents/9e7f3111-ee1c-40fb-a144-47458e297c13/sessions/16',
 
 })
   .then(function (response) {
