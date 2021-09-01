@@ -75,6 +75,7 @@ app.post('/webhook', (req, res) => {
 
     const tag = req.body.tag;
     const session_name = req.body.session;
+    console.log('this is session:'+session_name);
 
 axios({
   method: 'get',
