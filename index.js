@@ -4,26 +4,13 @@ const bodyParser = require('body-parser');
 const http = require('http');
 const axios = require('axios');
 const https = require('https');
-var mysql = require('mysql');
+var mysq = require('mysql');
 const port = 8080;
 var fs = require('fs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 const dialogFLowHelper = require('./dialogflow.helper');
 
-var mysqlConnection = mysql.createConnection({
-  host:'167.99.148.122',
-  user:'newuser',
-  password:'password',
-  database:'autochat'
-});
-
-mysqlConnection.connect((err)=>{
-  if(!err)
-  console.log('DB connected');
-  else
-  console.log('Not Connecte');
-});
 
 app.post('/', async (req, res) => {
 
@@ -69,14 +56,25 @@ app.post('/webhook', (req, res) => {
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
 
-    mysqlConnection.query('SELECT * FROM aichat_data WHERE location_id="'+req.param('id')+'"',(err,rows,fields)=>{
-     
-          res.send({
-              data:rows,
-              status: true
-          });
-     
-    });
+
+
+  https.get('http://mybusiness.chat/api.php?location=projects/wallet-campaigns-307112/locations/us-central1/agents/9e7f3111-ee1c-40fb-a144-47458e297c13/sessions/16', (resp) => {
+  let data = '';
+
+  // A chunk of data has been received.
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  // The whole response has been received. Print out the result.
+  resp.on('end', () => {
+    console.log(JSON.parse(data));
+  });
+
+}).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
+
   
 //   const tag = req.body.fulfillmentInfo.tag;
 //   const session_name = req.body.sessionInfo.session;
